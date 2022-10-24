@@ -1,0 +1,25 @@
+## HEXADECIMAL
+0123456789ABCDEF
+0 - ausência
+F - máximo
+
+#000000 - preto, ausência de vermelho, verde e azul
+
+#FFFFFF - branco, máximo de vermelho, verde e azul
+
+#00FF00 - verde
+
+-------------------------------------
+## RGB = Red Green Blue
+0,1,2,3,...,255
+0 = ausência
+255 = máximo
+
+rgb(255,255,255) = branco
+
+-------------------------------------
+Nomenclatura
+
+red
+blue
+yellow...
