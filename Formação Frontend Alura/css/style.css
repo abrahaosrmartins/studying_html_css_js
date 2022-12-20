@@ -123,7 +123,7 @@ form legend {
 	margin: 20px 0;
 }
 
-.input-radio label{
+.input-radio label {
 	display: inline-block;
 	width: 12%;
 	font-size: 16px;
@@ -333,6 +333,27 @@ th {
 	.video {
 		margin-bottom: 0;
 	}
+
+	form label,
+	form legend {
+		text-align: center;
+	}
+
+	.input-padrao, select, table {
+		width: 500px;
+		text-align: center;
+		margin: 0 auto 20px auto;
+	}
+
+	.input-radio label {
+		width: 15%;
+	}
+
+	.enviar {
+		background: black;
+		color: white;
+		cursor: pointer;
+	}
 }
 
 @media screen and (max-width: 425px) {
@@ -371,9 +392,17 @@ th {
 	.lista-beneficios {
 		margin: 0 0 20px 0
 	}
+
+	.input-padrao, select, table {
+		width: 350px;
+	}
+
+	.input-radio label {
+		width: 25%;
+	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
 	nav a {
 		font-size: 19px;
 	}
@@ -384,5 +413,23 @@ th {
 
 	nav ul li:first-child {
 		margin: 0;
+	}
+
+	form {
+		margin: 0;
+	}
+	.input-padrao, select, table {
+		width: 200px;
+	}
+
+	select {
+		margin: 0;
+	}
+
+	.input-radio label {
+		display: block;
+		text-align: left;
+		margin-left: 30px;
+		width: 50%;
 	}
 }
