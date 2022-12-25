@@ -1,0 +1,5 @@
+.receita__desricao {
+    font-size: 1.875rem;
+    line-height: 1.5; /*entender melhor essa propriedade line height */
+    text-align: left;
+}
