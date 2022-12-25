@@ -1,0 +1,11 @@
+___________________________________________
+padrão de nomenclatura de classes
+
+BEM
+BLOCK ELEMENT MODIFIER
+
+bloco
+
+bloco__elemento
+
+bloco__elemento--modificador
