@@ -23,8 +23,18 @@ async function criaVideo(titulo, descricao, url, imagem) {
         })
     });
 
+    if (!conexao.ok) {
+        throw new Error("Não foi possível enviar o vídeo.");
+    }
+
     const response = await conexao.json();
+    //TODO: perguntar ao lucas ou Amigoni porque aqui tem await se la no fetch já tem
     return response;
+}
+
+async function buscaVideo(termoDeBusca) {
+    const conexao = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`)
+    return await conexao.json();
 }
 
 /**
@@ -32,5 +42,6 @@ async function criaVideo(titulo, descricao, url, imagem) {
  */
 export const conectaApi = {
     listaVideos,
-    criaVideo
+    criaVideo,
+    buscaVideo
 }
