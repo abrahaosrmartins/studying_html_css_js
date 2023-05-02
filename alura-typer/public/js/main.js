@@ -14,13 +14,14 @@ campo.on('input', function () {
 
 let tempoRestante = $("#tempo-digitacao").text()
 
-campo.on("focus", function () {
-    setInterval(function () {
+campo.one("focus", function () {
+    let cronometroId = setInterval(function () { //todo setInterval retorna o seu próprio ID
         tempoRestante--
-        console.log(tempoRestante);
+        // console.log(tempoRestante);
         $("#tempo-digitacao").text(tempoRestante)
-        if (tempoRestante) {
+        if (tempoRestante < 1) {
             campo.attr("disabled", true)
+            clearInterval(cronometroId)
         }
     }, 1000)
 })
