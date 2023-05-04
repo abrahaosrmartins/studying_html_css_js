@@ -1,3 +1,5 @@
+$('#botao-placar').click(mostraPlacar)
+
 function inserePlacar() {
     let corpoTabela = $(".placar").find("tbody");
     let usuario = "Abrahão"
@@ -31,4 +33,13 @@ function novaLinha(usuario, palavras) {
 
 function removeLinha() {
     $(this).parent().parent().remove();
+}
+
+function mostraPlacar() {
+    // $(".placar").toggle().show();
+    // $(".placar").toggle().hide();
+    // $(".placar").toggle(); // mostra ou esconde um elemento
+    // $(".placar").slideDown(500);
+    // $(".placar").slideUp(500);
+    $(".placar").slideToggle(600);
 }
