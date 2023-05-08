@@ -2,13 +2,26 @@ $('#botao-placar').click(mostraPlacar)
 
 function inserePlacar() {
     let corpoTabela = $(".placar").find("tbody");
-    let usuario = "Abrahão"
+    let usuario = "Douglas"
     let numPalavras = $("#contador-palavras").text();
 
     let linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
 
     corpoTabela.append(linha);
+
+    $(".placar").slideDown(500);
+    scrollPlacar();
+}
+
+function scrollPlacar() {
+    // offset retorna a posição que o elemento está na página
+    //. top pega a distância que ele está do topo
+    let posicaoPlacar = $(".placar").offset().top;
+    $("body").animate(
+        { // recebe um objeto com o css que vai ser animado, e o tempo de animação
+            scrollTop: posicaoPlacar + "px"
+        }, 1000);
 }
 
 function novaLinha(usuario, palavras) {
@@ -32,7 +45,12 @@ function novaLinha(usuario, palavras) {
 }
 
 function removeLinha() {
-    $(this).parent().parent().remove();
+    event.preventDefault();
+    let linha = $(this).parent().parent()
+    linha.fadeOut(1000);
+    setTimeout(function () {
+        linha.remove();
+    }, 1000); // se não fizer o setTimeOut, o remove é executado antes do fadeOut terminar
 }
 
 function mostraPlacar() {
@@ -41,5 +59,6 @@ function mostraPlacar() {
     // $(".placar").toggle(); // mostra ou esconde um elemento
     // $(".placar").slideDown(500);
     // $(".placar").slideUp(500);
-    $(".placar").slideToggle(600);
+    $(".placar").stop().slideToggle(600);
+    // o .stop() para qualquer animação que estiver em andamento antes de executar a próxima
 }
