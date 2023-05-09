@@ -1,4 +1,5 @@
 $('#botao-placar').click(mostraPlacar)
+$("#botao-sync").click(sincronizaPlacar)
 
 function inserePlacar() {
     let corpoTabela = $(".placar").find("tbody");
@@ -61,4 +62,8 @@ function mostraPlacar() {
     // $(".placar").slideUp(500);
     $(".placar").stop().slideToggle(600);
     // o .stop() para qualquer animação que estiver em andamento antes de executar a próxima
+}
+
+function sincronizaPlacar() {
+    console.log("oi");
 }
